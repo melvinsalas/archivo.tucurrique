@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="minute">
+  <header>
+    <h1>{{ page.title | default: "Acta " | append: page.numero | append: " (" | append: page.tipo | append:") - " |
+      append: page.fecha }}</h1>
+  </header>
+  <ul>
+    <li><strong>Número:</strong> {{ page.number }}</li>
+    <li><strong>Tipo:</strong> {{ page.type }}</li>
+    <li><strong>Fecha:</strong> {{ page.date }}</li>
+    <li><strong>Archivo:</strong>
+      {% if page.file %}
+      <a href="{{ page.file }}" target="_blank" rel="noopener">Ver PDF</a>
+      {% else %}
+      <em>Sin archivo</em>
+      {% endif %}
+    </li>
+  </ul>
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
