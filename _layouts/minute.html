@@ -3,8 +3,7 @@ layout: default
 ---
 <article class="minute">
   <header>
-    <h1>{{ page.title | default: "Acta " | append: page.numero | append: " (" | append: page.tipo | append:") - " |
-      append: page.fecha }}</h1>
+    <h1>Sesión {{ page.type | capitalize }} {{ page.number }}-{{ page.date | date: "%Y" }}</h1>
   </header>
   <ul>
     <li><strong>Número:</strong> {{ page.number }}</li>
