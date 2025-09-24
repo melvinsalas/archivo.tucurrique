@@ -22,9 +22,9 @@ permalink: /actas/
       {%- assign month_items = m.items | sort: 'date' | reverse -%}
       {% for minute in month_items %}
         <li>
-          <a href="{{ minute.url }}">{{ minute.title }}</a>
+          <a href="{{ minute.url | relative_url }}">{{ minute.title }}</a>
           {% if minute.file %}
-            - <a href="{{ minute.file }}" target="_blank" rel="noopener">PDF</a>
+            - <a href="{{ minute.file | relative_url }}" target="_blank" rel="noopener">PDF</a>
           {% endif %}
         </li>
       {% endfor %}

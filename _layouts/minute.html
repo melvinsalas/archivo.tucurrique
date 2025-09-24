@@ -17,7 +17,7 @@ layout: default
     </li>
     <li><strong>Enlace:</strong>
       {% if page.file %}
-      <a href="{{ page.file }}" target="_blank" rel="noopener">Descargar Archivo</a>
+      <a href="{{ page.file | relative_url }}" target="_blank" rel="noopener">Descargar Archivo</a>
       {% else %}
       <em>Sin archivo</em>
       {% endif %}
