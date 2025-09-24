@@ -1,15 +1,22 @@
 ---
 layout: default
 ---
+
+{%- assign d = page.date | default: page.created_at | default: post.date -%}
+{%- assign day = d | date: "%-d" -%}
+{%- assign month_i = d | date: "%-m" | minus: 1 -%}
+{%- assign year = d | date: "%Y" -%}
+
 <article class="minute">
   <header>
-    <h1>Sesión {{ page.type | capitalize }} {{ page.number }}-{{ page.date | date: "%Y" }}</h1>
+    <h1>Sesión {{ page.type | capitalize }} {{ page.number }}-{{ year }}</h1>
   </header>
   <ul>
     <li><strong>Número:</strong> {{ page.number }}</li>
     <li><strong>Tipo:</strong> {{ page.type }}</li>
-    <li><strong>Fecha:</strong> {{ page.date }}</li>
-    <li><strong>Archivo:</strong>
+    <li><strong>Fecha:</strong> {{ day }} de {{ site.locales.es.months[month_i] }} de {{ year }}
+    </li>
+    <li><strong>Enlace de descarga:</strong>
       {% if page.file %}
       <a href="{{ page.file }}" target="_blank" rel="noopener">Ver PDF</a>
       {% else %}
@@ -19,5 +26,8 @@ layout: default
   </ul>
   <div class="content">
     {{ content }}
+    {% if page.file %}
+    <iframe src="{{ page.file }}" width="100%" height="600px"></iframe>
+    {% endif %}
   </div>
 </article>
