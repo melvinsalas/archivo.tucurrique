@@ -62,7 +62,7 @@ defaults:
 
 # Allow serving PDFs and other assets inside the collection
 include:
-  - _files
+  - _files/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
