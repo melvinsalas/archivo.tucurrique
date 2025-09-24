@@ -41,7 +41,7 @@ collections:
     permalink: /files/:path/
   minutes:
     output: true
-    permalink: /minutes/:path/
+    permalink: /actas/:path/
 
 # Defaults for minutes front matter (optional helpers)
 defaults:
