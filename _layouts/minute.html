@@ -9,16 +9,15 @@ layout: default
 
 <article class="minute">
   <header>
-    <h1>Sesión {{ page.type | capitalize }} {{ page.number }}-{{ year }}</h1>
+    <h1>{{ page.title}}</h1>
   </header>
   <ul>
-    <li><strong>Número:</strong> {{ page.number }}</li>
-    <li><strong>Tipo:</strong> {{ page.type }}</li>
+    <li><strong>Tipo:</strong> {{ page.type | capitalize }}</li>
     <li><strong>Fecha:</strong> {{ day }} de {{ site.locales.es.months[month_i] }} de {{ year }}
     </li>
-    <li><strong>Enlace de descarga:</strong>
+    <li><strong>Enlace:</strong>
       {% if page.file %}
-      <a href="{{ page.file }}" target="_blank" rel="noopener">Ver PDF</a>
+      <a href="{{ page.file }}" target="_blank" rel="noopener">Descargar Archivo</a>
       {% else %}
       <em>Sin archivo</em>
       {% endif %}

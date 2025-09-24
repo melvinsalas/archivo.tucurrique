@@ -9,7 +9,7 @@ permalink: /actas/
 {% for minute in items %}
   <li>
     <a href="{{ minute.url }}">
-      Sesión {{ minute.type | capitalize }} {{ minute.number }}-{{ minute.date | date: "%Y" }}
+      {{ minute.title }}
     </a>
     {% if minute.file %}
       — <a href="{{ minute.file }}" target="_blank" rel="noopener">PDF</a>
